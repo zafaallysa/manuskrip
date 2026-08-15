@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-on-background font-body;
+  }
+}
+
+@layer components {
+  /* Decorative divider: thin line with a gold Islamic star in the center */
+  .decorative-divider {
+    @apply flex items-center gap-4 text-gold select-none;
+  }
+  .decorative-divider::before,
+  .decorative-divider::after {
+    content: '';
+    @apply flex-1 h-px;
+    background: linear-gradient(to right, transparent, rgba(212, 175, 55, 0.6));
+  }
+  .decorative-divider::after {
+    background: linear-gradient(to left, transparent, rgba(212, 175, 55, 0.6));
+  }
+
+  /* Manuscript "double-line" border: 1px emerald + 2px gold */
+  .manuscript-frame {
+    @apply relative p-2 bg-surface;
+    border: 1px solid rgba(6, 78, 59, 0.8);
+    outline: 2px solid rgba(212, 175, 55, 0.9);
+    outline-offset: -6px;
+  }
+}
